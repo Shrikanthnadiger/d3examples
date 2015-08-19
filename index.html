@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html style="height:100%">
+  <head>
+    <meta charset="UTF-8" />
+    <title>user login!</title>
+    <!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.js"></script>-->
+    <script type="text/javascript" src="d3/d3.js"></script>
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">-->
+    <link rel="stylesheet" type="text/css" href="bootstrap\css\bootstrap.min.css">
+   <style type="text/css">
+    .vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+   	.form-login {
+    background-color: #EDEDED;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:0 1px 0 #cfcfcf;
+}
+   </style>
+  </head>
+  <body style="background:url(bg.png) repeat;height: 100%;">
+    <div class="row" style="height: 100%;margin-right:0px">
+    	<div class="col-md-4 col-xs-1 col-sm-3 col-lg-4 vcenter" style="height:100%"></div>
+  		<div class="col-xs-10  col-md-5 col-lg-4 col-sm-6 vcenter" style="margin-top:-10%">
+        	<div class="form-login" style="text-align:center">
+		            <h4 >Welcome To Invisible Friend</h4>
+		            <input type="text" id="userName" class="form-control input-sm chat-input" placeholder="username">
+		            <br>
+		            <input type="text" id="userPassword" class="form-control input-sm chat-input" placeholder="password">
+		            <br>
+		            <div >
+		            <span class="group-btn">     
+		                <a href="#" class="btn btn-primary btn-md" onclick="return submit(event)">login <i class="fa fa-sign-in"></i></a>
+		            </span>
+	        </div>
+    	</div>
+	</div>
+</body>
+</html>
+  <script type="text/javascript">
+function submit(e){
+	e.preventDefault();
+	var user=document.getElementById("userName").value;
+	var pass=document.getElementById("userPassword").value;
+	if(user == "" || user == " "){alert("Enter username"); document.getElementById("userName").focus(); return false }
+	if(pass == "" || pass == " "){alert("Enter password"); document.getElementById("userPassword").focus(); return false }
+	if(user == "admin" && pass == "admin"){
+		window.location="ad/";
+	}else{
+		document.getElementById("userName").focus();
+		alert("User credentials are not matching");
+	}
+	
+}
+  </script>
